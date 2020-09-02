@@ -12,18 +12,18 @@ import (
 	cbg "github.com/whyrusleeping/cbor-gen"
 	"golang.org/x/xerrors"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	big "github.com/filecoin-project/specs-actors/actors/abi/big"
-	builtin "github.com/filecoin-project/specs-actors/actors/builtin"
-	market "github.com/filecoin-project/specs-actors/actors/builtin/market"
-	power "github.com/filecoin-project/specs-actors/actors/builtin/power"
-	"github.com/filecoin-project/specs-actors/actors/builtin/reward"
-	crypto "github.com/filecoin-project/specs-actors/actors/crypto"
-	vmr "github.com/filecoin-project/specs-actors/actors/runtime"
-	exitcode "github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	. "github.com/filecoin-project/specs-actors/actors/util"
-	adt "github.com/filecoin-project/specs-actors/actors/util/adt"
-	"github.com/filecoin-project/specs-actors/actors/util/smoothing"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	big "github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	builtin "github.com/filecoin-project/specs-actors/v2/actors/builtin"
+	market "github.com/filecoin-project/specs-actors/v2/actors/builtin/market"
+	power "github.com/filecoin-project/specs-actors/v2/actors/builtin/power"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/reward"
+	crypto "github.com/filecoin-project/specs-actors/v2/actors/crypto"
+	vmr "github.com/filecoin-project/specs-actors/v2/actors/runtime"
+	exitcode "github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	. "github.com/filecoin-project/specs-actors/v2/actors/util"
+	adt "github.com/filecoin-project/specs-actors/v2/actors/util/adt"
+	"github.com/filecoin-project/specs-actors/v2/actors/util/smoothing"
 )
 
 type Runtime = vmr.Runtime
@@ -1600,7 +1600,7 @@ func processEarlyTerminations(rt Runtime) (more bool) {
 
 	// TODO: We're using the current power+epoch reward. Technically, we
 	// should use the power/reward at the time of termination.
-	// https://github.com/filecoin-project/specs-actors/pull/648
+	// https://github.com/filecoin-project/specs-actors/v2/pull/648
 	rewardStats := requestCurrentEpochBlockReward(rt)
 	pwrTotal := requestCurrentTotalPower(rt)
 

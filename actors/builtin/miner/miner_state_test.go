@@ -12,15 +12,15 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/filecoin-project/specs-actors/actors/abi"
-	"github.com/filecoin-project/specs-actors/actors/abi/big"
-	"github.com/filecoin-project/specs-actors/actors/builtin/miner"
-	power "github.com/filecoin-project/specs-actors/actors/builtin/power"
-	"github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	"github.com/filecoin-project/specs-actors/actors/util/adt"
-	"github.com/filecoin-project/specs-actors/support/ipld"
-	"github.com/filecoin-project/specs-actors/support/mock"
-	tutils "github.com/filecoin-project/specs-actors/support/testing"
+	"github.com/filecoin-project/specs-actors/v2/actors/abi"
+	"github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/miner"
+	power "github.com/filecoin-project/specs-actors/v2/actors/builtin/power"
+	"github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	"github.com/filecoin-project/specs-actors/v2/actors/util/adt"
+	"github.com/filecoin-project/specs-actors/v2/support/ipld"
+	"github.com/filecoin-project/specs-actors/v2/support/mock"
+	tutils "github.com/filecoin-project/specs-actors/v2/support/testing"
 )
 
 func TestPrecommittedSectorsStore(t *testing.T) {

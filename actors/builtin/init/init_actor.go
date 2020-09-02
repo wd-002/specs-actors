@@ -4,12 +4,12 @@ import (
 	addr "github.com/filecoin-project/go-address"
 	cid "github.com/ipfs/go-cid"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	builtin "github.com/filecoin-project/specs-actors/actors/builtin"
-	runtime "github.com/filecoin-project/specs-actors/actors/runtime"
-	exitcode "github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	autil "github.com/filecoin-project/specs-actors/actors/util"
-	adt "github.com/filecoin-project/specs-actors/actors/util/adt"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	builtin "github.com/filecoin-project/specs-actors/v2/actors/builtin"
+	runtime "github.com/filecoin-project/specs-actors/v2/actors/runtime"
+	exitcode "github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	autil "github.com/filecoin-project/specs-actors/v2/actors/util"
+	adt "github.com/filecoin-project/specs-actors/v2/actors/util/adt"
 )
 
 // The init actor uniquely has the power to create new actors.

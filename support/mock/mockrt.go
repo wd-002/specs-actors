@@ -14,14 +14,14 @@ import (
 	cid "github.com/ipfs/go-cid"
 	mh "github.com/multiformats/go-multihash"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	big "github.com/filecoin-project/specs-actors/actors/abi/big"
-	"github.com/filecoin-project/specs-actors/actors/builtin"
-	"github.com/filecoin-project/specs-actors/actors/builtin/exported"
-	"github.com/filecoin-project/specs-actors/actors/crypto"
-	runtime "github.com/filecoin-project/specs-actors/actors/runtime"
-	exitcode "github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	"github.com/filecoin-project/specs-actors/actors/util/adt"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	big "github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/exported"
+	"github.com/filecoin-project/specs-actors/v2/actors/crypto"
+	runtime "github.com/filecoin-project/specs-actors/v2/actors/runtime"
+	exitcode "github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	"github.com/filecoin-project/specs-actors/v2/actors/util/adt"
 )
 
 // A mock runtime for unit testing of actors in isolation.

@@ -2,9 +2,9 @@ package verifreg
 
 import (
 	addr "github.com/filecoin-project/go-address"
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	big "github.com/filecoin-project/specs-actors/actors/abi/big"
-	adt "github.com/filecoin-project/specs-actors/actors/util/adt"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	big "github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	adt "github.com/filecoin-project/specs-actors/v2/actors/util/adt"
 	cid "github.com/ipfs/go-cid"
 )
 

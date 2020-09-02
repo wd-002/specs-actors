@@ -8,15 +8,16 @@ import (
 	assert "github.com/stretchr/testify/assert"
 
 	addr "github.com/filecoin-project/go-address"
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	big "github.com/filecoin-project/specs-actors/actors/abi/big"
-	builtin "github.com/filecoin-project/specs-actors/actors/builtin"
-	init_ "github.com/filecoin-project/specs-actors/actors/builtin/init"
-	runtime "github.com/filecoin-project/specs-actors/actors/runtime"
-	exitcode "github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	adt "github.com/filecoin-project/specs-actors/actors/util/adt"
-	mock "github.com/filecoin-project/specs-actors/support/mock"
-	tutil "github.com/filecoin-project/specs-actors/support/testing"
+
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	big "github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	builtin "github.com/filecoin-project/specs-actors/v2/actors/builtin"
+	init_ "github.com/filecoin-project/specs-actors/v2/actors/builtin/init"
+	runtime "github.com/filecoin-project/specs-actors/v2/actors/runtime"
+	exitcode "github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	adt "github.com/filecoin-project/specs-actors/v2/actors/util/adt"
+	mock "github.com/filecoin-project/specs-actors/v2/support/mock"
+	tutil "github.com/filecoin-project/specs-actors/v2/support/testing"
 )
 
 func TestExports(t *testing.T) {

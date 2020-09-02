@@ -10,16 +10,16 @@ import (
 	assert "github.com/stretchr/testify/assert"
 	require "github.com/stretchr/testify/require"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	big "github.com/filecoin-project/specs-actors/actors/abi/big"
-	builtin "github.com/filecoin-project/specs-actors/actors/builtin"
-	miner "github.com/filecoin-project/specs-actors/actors/builtin/miner"
-	multisig "github.com/filecoin-project/specs-actors/actors/builtin/multisig"
-	runtime "github.com/filecoin-project/specs-actors/actors/runtime"
-	exitcode "github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	adt "github.com/filecoin-project/specs-actors/actors/util/adt"
-	mock "github.com/filecoin-project/specs-actors/support/mock"
-	tutil "github.com/filecoin-project/specs-actors/support/testing"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	big "github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	builtin "github.com/filecoin-project/specs-actors/v2/actors/builtin"
+	miner "github.com/filecoin-project/specs-actors/v2/actors/builtin/miner"
+	multisig "github.com/filecoin-project/specs-actors/v2/actors/builtin/multisig"
+	runtime "github.com/filecoin-project/specs-actors/v2/actors/runtime"
+	exitcode "github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	adt "github.com/filecoin-project/specs-actors/v2/actors/util/adt"
+	mock "github.com/filecoin-project/specs-actors/v2/support/mock"
+	tutil "github.com/filecoin-project/specs-actors/v2/support/testing"
 )
 
 func TestExports(t *testing.T) {

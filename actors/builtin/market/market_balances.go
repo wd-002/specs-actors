@@ -4,10 +4,10 @@ import (
 	addr "github.com/filecoin-project/go-address"
 	"golang.org/x/xerrors"
 
-	"github.com/filecoin-project/specs-actors/actors/abi"
-	"github.com/filecoin-project/specs-actors/actors/abi/big"
-	"github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	. "github.com/filecoin-project/specs-actors/actors/util"
+	"github.com/filecoin-project/specs-actors/v2/actors/abi"
+	"github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	"github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	. "github.com/filecoin-project/specs-actors/v2/actors/util"
 )
 
 // if the returned error is not nil, the Runtime will exit with the returned exit code.

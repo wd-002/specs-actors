@@ -1,21 +1,21 @@
 package exported
 
 import (
-	"github.com/filecoin-project/specs-actors/actors/abi"
-	"github.com/filecoin-project/specs-actors/actors/builtin"
 	cid "github.com/ipfs/go-cid"
 
-	"github.com/filecoin-project/specs-actors/actors/builtin/account"
-	"github.com/filecoin-project/specs-actors/actors/builtin/cron"
-	init_ "github.com/filecoin-project/specs-actors/actors/builtin/init"
-	"github.com/filecoin-project/specs-actors/actors/builtin/market"
-	"github.com/filecoin-project/specs-actors/actors/builtin/miner"
-	"github.com/filecoin-project/specs-actors/actors/builtin/multisig"
-	"github.com/filecoin-project/specs-actors/actors/builtin/paych"
-	"github.com/filecoin-project/specs-actors/actors/builtin/power"
-	"github.com/filecoin-project/specs-actors/actors/builtin/reward"
-	"github.com/filecoin-project/specs-actors/actors/builtin/system"
-	"github.com/filecoin-project/specs-actors/actors/builtin/verifreg"
+	"github.com/filecoin-project/specs-actors/v2/actors/abi"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/account"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/cron"
+	init_ "github.com/filecoin-project/specs-actors/v2/actors/builtin/init"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/market"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/miner"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/multisig"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/paych"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/power"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/reward"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/system"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/verifreg"
 )
 
 var _ abi.Invokee = BuiltinActor{}

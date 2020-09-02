@@ -6,13 +6,13 @@ import (
 	"github.com/filecoin-project/go-address"
 	addr "github.com/filecoin-project/go-address"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	builtin "github.com/filecoin-project/specs-actors/actors/builtin"
-	initact "github.com/filecoin-project/specs-actors/actors/builtin/init"
-	vmr "github.com/filecoin-project/specs-actors/actors/runtime"
-	exitcode "github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	adt "github.com/filecoin-project/specs-actors/actors/util/adt"
-	"github.com/filecoin-project/specs-actors/actors/util/smoothing"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	builtin "github.com/filecoin-project/specs-actors/v2/actors/builtin"
+	initact "github.com/filecoin-project/specs-actors/v2/actors/builtin/init"
+	vmr "github.com/filecoin-project/specs-actors/v2/actors/runtime"
+	exitcode "github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	adt "github.com/filecoin-project/specs-actors/v2/actors/util/adt"
+	"github.com/filecoin-project/specs-actors/v2/actors/util/smoothing"
 )
 
 type Runtime = vmr.Runtime

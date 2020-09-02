@@ -7,9 +7,10 @@ import (
 	"io"
 
 	address "github.com/filecoin-project/go-address"
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
 	cbg "github.com/whyrusleeping/cbor-gen"
 	xerrors "golang.org/x/xerrors"
+
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
 )
 
 var _ = xerrors.Errorf

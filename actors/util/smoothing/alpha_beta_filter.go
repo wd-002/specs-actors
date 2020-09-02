@@ -3,9 +3,9 @@ package smoothing
 import (
 	gbig "math/big"
 
-	"github.com/filecoin-project/specs-actors/actors/abi"
-	"github.com/filecoin-project/specs-actors/actors/abi/big"
-	"github.com/filecoin-project/specs-actors/actors/util/math"
+	"github.com/filecoin-project/specs-actors/v2/actors/abi"
+	"github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	"github.com/filecoin-project/specs-actors/v2/actors/util/math"
 )
 
 var (

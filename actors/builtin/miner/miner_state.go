@@ -11,13 +11,13 @@ import (
 	errors "github.com/pkg/errors"
 	xerrors "golang.org/x/xerrors"
 
-	power "github.com/filecoin-project/specs-actors/actors/builtin/power"
-	. "github.com/filecoin-project/specs-actors/actors/util"
+	power "github.com/filecoin-project/specs-actors/v2/actors/builtin/power"
+	. "github.com/filecoin-project/specs-actors/v2/actors/util"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	big "github.com/filecoin-project/specs-actors/actors/abi/big"
-	xc "github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	adt "github.com/filecoin-project/specs-actors/actors/util/adt"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	big "github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	xc "github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	adt "github.com/filecoin-project/specs-actors/v2/actors/util/adt"
 )
 
 // Balance of Miner Actor should be greater than or equal to

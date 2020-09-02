@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	"github.com/filecoin-project/go-bitfield"
-	"github.com/filecoin-project/specs-actors/actors/abi"
-	xc "github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	"github.com/filecoin-project/specs-actors/actors/util/adt"
+	"github.com/filecoin-project/specs-actors/v2/actors/abi"
+	xc "github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	"github.com/filecoin-project/specs-actors/v2/actors/util/adt"
 	"golang.org/x/xerrors"
 
 	"github.com/ipfs/go-cid"

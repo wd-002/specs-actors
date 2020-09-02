@@ -5,14 +5,14 @@ import (
 
 	addr "github.com/filecoin-project/go-address"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	big "github.com/filecoin-project/specs-actors/actors/abi/big"
-	"github.com/filecoin-project/specs-actors/actors/builtin"
-	crypto "github.com/filecoin-project/specs-actors/actors/crypto"
-	"github.com/filecoin-project/specs-actors/actors/runtime"
-	vmr "github.com/filecoin-project/specs-actors/actors/runtime"
-	"github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	adt "github.com/filecoin-project/specs-actors/actors/util/adt"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	big "github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin"
+	crypto "github.com/filecoin-project/specs-actors/v2/actors/crypto"
+	"github.com/filecoin-project/specs-actors/v2/actors/runtime"
+	vmr "github.com/filecoin-project/specs-actors/v2/actors/runtime"
+	"github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	adt "github.com/filecoin-project/specs-actors/v2/actors/util/adt"
 )
 
 const (

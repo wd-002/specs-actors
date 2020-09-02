@@ -6,9 +6,9 @@ import (
 	gbig "math/big"
 	"testing"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	big "github.com/filecoin-project/specs-actors/actors/abi/big"
-	"github.com/filecoin-project/specs-actors/actors/util/math"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	big "github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	"github.com/filecoin-project/specs-actors/v2/actors/util/math"
 	"github.com/stretchr/testify/assert"
 	"github.com/xorcare/golden"
 )

@@ -1,10 +1,10 @@
 package system
 
 import (
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	builtin "github.com/filecoin-project/specs-actors/actors/builtin"
-	runtime "github.com/filecoin-project/specs-actors/actors/runtime"
-	adt "github.com/filecoin-project/specs-actors/actors/util/adt"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	builtin "github.com/filecoin-project/specs-actors/v2/actors/builtin"
+	runtime "github.com/filecoin-project/specs-actors/v2/actors/runtime"
+	adt "github.com/filecoin-project/specs-actors/v2/actors/util/adt"
 )
 
 type Actor struct{}

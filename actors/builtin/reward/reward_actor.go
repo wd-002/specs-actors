@@ -3,15 +3,15 @@ package reward
 import (
 	"github.com/filecoin-project/go-address"
 
-	"github.com/filecoin-project/specs-actors/actors/util/smoothing"
+	"github.com/filecoin-project/specs-actors/v2/actors/util/smoothing"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	big "github.com/filecoin-project/specs-actors/actors/abi/big"
-	builtin "github.com/filecoin-project/specs-actors/actors/builtin"
-	vmr "github.com/filecoin-project/specs-actors/actors/runtime"
-	exitcode "github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	. "github.com/filecoin-project/specs-actors/actors/util"
-	adt "github.com/filecoin-project/specs-actors/actors/util/adt"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	big "github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	builtin "github.com/filecoin-project/specs-actors/v2/actors/builtin"
+	vmr "github.com/filecoin-project/specs-actors/v2/actors/runtime"
+	exitcode "github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	. "github.com/filecoin-project/specs-actors/v2/actors/util"
+	adt "github.com/filecoin-project/specs-actors/v2/actors/util/adt"
 )
 
 type Actor struct{}

@@ -6,10 +6,11 @@ import (
 	"fmt"
 	"io"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	smoothing "github.com/filecoin-project/specs-actors/actors/util/smoothing"
 	cbg "github.com/whyrusleeping/cbor-gen"
 	xerrors "golang.org/x/xerrors"
+
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	smoothing "github.com/filecoin-project/specs-actors/v2/actors/util/smoothing"
 )
 
 var _ = xerrors.Errorf

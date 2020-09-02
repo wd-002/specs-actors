@@ -6,7 +6,7 @@ import (
 	cbg "github.com/whyrusleeping/cbor-gen"
 	"golang.org/x/xerrors"
 
-	runtime "github.com/filecoin-project/specs-actors/actors/runtime"
+	runtime "github.com/filecoin-project/specs-actors/v2/actors/runtime"
 )
 
 // Multimap stores multiple values per key in a HAMT of AMTs.

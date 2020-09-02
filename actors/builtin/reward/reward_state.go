@@ -1,9 +1,9 @@
 package reward
 
 import (
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	big "github.com/filecoin-project/specs-actors/actors/abi/big"
-	"github.com/filecoin-project/specs-actors/actors/util/smoothing"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	big "github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	"github.com/filecoin-project/specs-actors/v2/actors/util/smoothing"
 )
 
 // A quantity of space * time (in byte-epochs) representing power committed to the network for some duration.

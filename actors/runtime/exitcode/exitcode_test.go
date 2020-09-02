@@ -4,9 +4,10 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/xerrors"
+
+	"github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
 )
 
 func TestWithContext(t *testing.T) {

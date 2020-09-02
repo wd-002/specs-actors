@@ -3,13 +3,13 @@ package verifreg
 import (
 	addr "github.com/filecoin-project/go-address"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	big "github.com/filecoin-project/specs-actors/actors/abi/big"
-	builtin "github.com/filecoin-project/specs-actors/actors/builtin"
-	vmr "github.com/filecoin-project/specs-actors/actors/runtime"
-	exitcode "github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	. "github.com/filecoin-project/specs-actors/actors/util"
-	adt "github.com/filecoin-project/specs-actors/actors/util/adt"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	big "github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	builtin "github.com/filecoin-project/specs-actors/v2/actors/builtin"
+	vmr "github.com/filecoin-project/specs-actors/v2/actors/runtime"
+	exitcode "github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	. "github.com/filecoin-project/specs-actors/v2/actors/util"
+	adt "github.com/filecoin-project/specs-actors/v2/actors/util/adt"
 )
 
 type Actor struct{}
@@ -64,7 +64,7 @@ func (a Actor) AddVerifier(rt vmr.Runtime, params *AddVerifierParams) *adt.Empty
 	rt.ValidateImmediateCallerIs(st.RootKey)
 
 	// TODO We need to resolve the verifier address to an ID address before making this comparison.
-	// https://github.com/filecoin-project/specs-actors/issues/556
+	// https://github.com/filecoin-project/specs-actors/v2/issues/556
 	if verifier == st.RootKey {
 		rt.Abortf(exitcode.ErrIllegalArgument, "Rootkey cannot be added as verifier")
 	}
@@ -232,7 +232,7 @@ func (a Actor) UseBytes(rt vmr.Runtime, params *UseBytesParams) *adt.EmptyValue 
 			// Will be restored later if the deal did not get activated with a ProvenSector.
 			//
 			// NOTE: Technically, client could lose up to MinVerifiedDealSize worth of DataCap.
-			// See: https://github.com/filecoin-project/specs-actors/issues/727
+			// See: https://github.com/filecoin-project/specs-actors/v2/issues/727
 			err = verifiedClients.Delete(AddrKey(client))
 			builtin.RequireNoErr(rt, err, exitcode.ErrIllegalState, "failed to delete verified client %v", client)
 		} else {

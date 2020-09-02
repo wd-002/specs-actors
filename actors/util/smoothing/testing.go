@@ -1,7 +1,7 @@
 package smoothing
 
 import (
-	"github.com/filecoin-project/specs-actors/actors/abi/big"
+	"github.com/filecoin-project/specs-actors/v2/actors/abi/big"
 )
 
 // Returns an estimate with position val and velocity 0

@@ -3,22 +3,21 @@ package main
 import (
 	gen "github.com/whyrusleeping/cbor-gen"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	builtin "github.com/filecoin-project/specs-actors/actors/builtin"
-	account "github.com/filecoin-project/specs-actors/actors/builtin/account"
-	cron "github.com/filecoin-project/specs-actors/actors/builtin/cron"
-	init_ "github.com/filecoin-project/specs-actors/actors/builtin/init"
-	market "github.com/filecoin-project/specs-actors/actors/builtin/market"
-	miner "github.com/filecoin-project/specs-actors/actors/builtin/miner"
-	multisig "github.com/filecoin-project/specs-actors/actors/builtin/multisig"
-	paych "github.com/filecoin-project/specs-actors/actors/builtin/paych"
-	power "github.com/filecoin-project/specs-actors/actors/builtin/power"
-	reward "github.com/filecoin-project/specs-actors/actors/builtin/reward"
-	system "github.com/filecoin-project/specs-actors/actors/builtin/system"
-	verifreg "github.com/filecoin-project/specs-actors/actors/builtin/verifreg"
-	puppet "github.com/filecoin-project/specs-actors/actors/puppet"
-
-	smoothing "github.com/filecoin-project/specs-actors/actors/util/smoothing"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	builtin "github.com/filecoin-project/specs-actors/v2/actors/builtin"
+	account "github.com/filecoin-project/specs-actors/v2/actors/builtin/account"
+	cron "github.com/filecoin-project/specs-actors/v2/actors/builtin/cron"
+	init_ "github.com/filecoin-project/specs-actors/v2/actors/builtin/init"
+	market "github.com/filecoin-project/specs-actors/v2/actors/builtin/market"
+	miner "github.com/filecoin-project/specs-actors/v2/actors/builtin/miner"
+	multisig "github.com/filecoin-project/specs-actors/v2/actors/builtin/multisig"
+	paych "github.com/filecoin-project/specs-actors/v2/actors/builtin/paych"
+	power "github.com/filecoin-project/specs-actors/v2/actors/builtin/power"
+	reward "github.com/filecoin-project/specs-actors/v2/actors/builtin/reward"
+	system "github.com/filecoin-project/specs-actors/v2/actors/builtin/system"
+	verifreg "github.com/filecoin-project/specs-actors/v2/actors/builtin/verifreg"
+	puppet "github.com/filecoin-project/specs-actors/v2/actors/puppet"
+	smoothing "github.com/filecoin-project/specs-actors/v2/actors/util/smoothing"
 )
 
 func main() {

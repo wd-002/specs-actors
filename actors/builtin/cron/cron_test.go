@@ -6,13 +6,13 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	big "github.com/filecoin-project/specs-actors/actors/abi/big"
-	builtin "github.com/filecoin-project/specs-actors/actors/builtin"
-	cron "github.com/filecoin-project/specs-actors/actors/builtin/cron"
-	exitcode "github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	mock "github.com/filecoin-project/specs-actors/support/mock"
-	tutil "github.com/filecoin-project/specs-actors/support/testing"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	big "github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	builtin "github.com/filecoin-project/specs-actors/v2/actors/builtin"
+	cron "github.com/filecoin-project/specs-actors/v2/actors/builtin/cron"
+	exitcode "github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	mock "github.com/filecoin-project/specs-actors/v2/support/mock"
+	tutil "github.com/filecoin-project/specs-actors/v2/support/testing"
 )
 
 func TestExports(t *testing.T) {

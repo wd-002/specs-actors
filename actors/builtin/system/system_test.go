@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/filecoin-project/specs-actors/actors/builtin"
-	"github.com/filecoin-project/specs-actors/actors/builtin/system"
-	"github.com/filecoin-project/specs-actors/support/mock"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin"
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/system"
+	"github.com/filecoin-project/specs-actors/v2/support/mock"
 	"github.com/stretchr/testify/require"
 )
 

@@ -1,4 +1,4 @@
-module github.com/filecoin-project/specs-actors
+module github.com/filecoin-project/specs-actors/v2
 
 go 1.13
 
@@ -6,6 +6,7 @@ require (
 	github.com/filecoin-project/go-address v0.0.3
 	github.com/filecoin-project/go-amt-ipld/v2 v2.1.0
 	github.com/filecoin-project/go-bitfield v0.2.0
+	github.com/filecoin-project/specs-actors v0.9.3
 	github.com/gopherjs/gopherjs v0.0.0-20190812055157-5d271430af9f // indirect
 	github.com/ipfs/go-block-format v0.0.2
 	github.com/ipfs/go-cid v0.0.7

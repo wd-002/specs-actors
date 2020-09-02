@@ -3,8 +3,8 @@ package miner
 import (
 	"sort"
 
-	"github.com/filecoin-project/specs-actors/actors/abi"
-	"github.com/filecoin-project/specs-actors/actors/abi/big"
+	"github.com/filecoin-project/specs-actors/v2/actors/abi"
+	"github.com/filecoin-project/specs-actors/v2/actors/abi/big"
 )
 
 // VestingFunds represents the vesting table state for the miner.

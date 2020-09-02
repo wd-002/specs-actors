@@ -9,9 +9,9 @@ import (
 	addr "github.com/filecoin-project/go-address"
 	cid "github.com/ipfs/go-cid"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	crypto "github.com/filecoin-project/specs-actors/actors/crypto"
-	exitcode "github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	crypto "github.com/filecoin-project/specs-actors/v2/actors/crypto"
+	exitcode "github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
 )
 
 // Specifies importance of message, LogLevel numbering is consistent with the uber-go/zap package.

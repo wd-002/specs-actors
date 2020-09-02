@@ -2,7 +2,7 @@ package builtin
 
 import (
 	addr "github.com/filecoin-project/go-address"
-	autil "github.com/filecoin-project/specs-actors/actors/util"
+	autil "github.com/filecoin-project/specs-actors/v2/actors/util"
 	"github.com/ipfs/go-cid"
 )
 

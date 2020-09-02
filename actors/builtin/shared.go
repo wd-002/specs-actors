@@ -5,11 +5,11 @@ import (
 
 	addr "github.com/filecoin-project/go-address"
 
-	abi "github.com/filecoin-project/specs-actors/actors/abi"
-	"github.com/filecoin-project/specs-actors/actors/abi/big"
-	runtime "github.com/filecoin-project/specs-actors/actors/runtime"
-	exitcode "github.com/filecoin-project/specs-actors/actors/runtime/exitcode"
-	autil "github.com/filecoin-project/specs-actors/actors/util"
+	abi "github.com/filecoin-project/specs-actors/v2/actors/abi"
+	"github.com/filecoin-project/specs-actors/v2/actors/abi/big"
+	runtime "github.com/filecoin-project/specs-actors/v2/actors/runtime"
+	exitcode "github.com/filecoin-project/specs-actors/v2/actors/runtime/exitcode"
+	autil "github.com/filecoin-project/specs-actors/v2/actors/util"
 )
 
 ///// Code shared by multiple built-in actors. /////
