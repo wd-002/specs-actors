@@ -2,11 +2,13 @@ package states
 
 import (
 	"bytes"
+
 	addr "github.com/filecoin-project/go-address"
 	"github.com/filecoin-project/go-state-types/abi"
 	"github.com/filecoin-project/go-state-types/big"
-	"github.com/filecoin-project/specs-actors/v2/actors/builtin/power"
 	"golang.org/x/xerrors"
+
+	"github.com/filecoin-project/specs-actors/v2/actors/builtin/power"
 
 	"github.com/filecoin-project/specs-actors/v2/actors/builtin"
 	"github.com/filecoin-project/specs-actors/v2/actors/builtin/account"
@@ -48,10 +50,9 @@ func CheckStateInvariants(tree *Tree, expectedBalanceTotal abi.TokenAmount, prio
 		case builtin.InitActorCodeID:
 			var st init_.State
 			if err := tree.Store.Get(tree.Store.Context(), actor.Head, &st); err != nil {
-				return err
-			}
-			if summary, msgs, err := init_.CheckStateInvariants(&st, tree.Store); err != nil {
-				return err
+				acc.Addf("error loading actor state: %v", err)
+			} else if summary, msgs, err := init_.CheckStateInvariants(&st, tree.Store); err != nil {
+				acc.Addf("error validating actor state: %v", err)
 			} else {
 				acc.WithPrefix("init: ").AddAll(msgs)
 				initSummary = summary
@@ -59,22 +60,19 @@ func CheckStateInvariants(tree *Tree, expectedBalanceTotal abi.TokenAmount, prio
 		case builtin.CronActorCodeID:
 			var st cron.State
 			if err := tree.Store.Get(tree.Store.Context(), actor.Head, &st); err != nil {
-				return err
-			}
-			if summary, msgs, err := cron.CheckStateInvariants(&st, tree.Store); err != nil {
-				return err
+				acc.Addf("error loading actor state: %v", err)
+			} else if summary, msgs, err := cron.CheckStateInvariants(&st, tree.Store); err != nil {
+				acc.Addf("error validating actor state: %v", err)
 			} else {
 				acc.WithPrefix("cron: ").AddAll(msgs)
 				cronSummary = summary
 			}
-
 		case builtin.AccountActorCodeID:
 			var st account.State
 			if err := tree.Store.Get(tree.Store.Context(), actor.Head, &st); err != nil {
-				return err
-			}
-			if summary, msgs, err := account.CheckStateInvariants(&st, key); err != nil {
-				return err
+				acc.Addf("error loading actor state: %v", err)
+			} else if summary, msgs, err := account.CheckStateInvariants(&st, key); err != nil {
+				acc.Addf("error validating actor state: %v", err)
 			} else {
 				acc.WithPrefix("account: ").AddAll(msgs)
 				accountSummaries = append(accountSummaries, summary)
@@ -82,10 +80,9 @@ func CheckStateInvariants(tree *Tree, expectedBalanceTotal abi.TokenAmount, prio
 		case builtin.StoragePowerActorCodeID:
 			var st power.State
 			if err := tree.Store.Get(tree.Store.Context(), actor.Head, &st); err != nil {
-				return err
-			}
-			if summary, msgs, err := power.CheckStateInvariants(&st, tree.Store); err != nil {
-				return err
+				acc.Addf("error loading actor state: %v", err)
+			} else if summary, msgs, err := power.CheckStateInvariants(&st, tree.Store); err != nil {
+				acc.Addf("error validating actor state: %v", err)
 			} else {
 				acc.WithPrefix("power: ").AddAll(msgs)
 				powerSummary = summary
@@ -93,56 +90,50 @@ func CheckStateInvariants(tree *Tree, expectedBalanceTotal abi.TokenAmount, prio
 		case builtin.StorageMinerActorCodeID:
 			var st miner.State
 			if err := tree.Store.Get(tree.Store.Context(), actor.Head, &st); err != nil {
-				return err
+				acc.Addf("error loading actor state: %v", err)
+			} else {
+				summary, msgs := miner.CheckStateInvariants(&st, tree.Store, actor.Balance)
+				acc.WithPrefix("miner: ").AddAll(msgs)
+				minerSummaries[key] = summary
 			}
-			summary, msgs := miner.CheckStateInvariants(&st, tree.Store, actor.Balance)
-			acc.WithPrefix("miner: ").AddAll(msgs)
-			minerSummaries[key] = summary
 		case builtin.StorageMarketActorCodeID:
 			var st market.State
 			if err := tree.Store.Get(tree.Store.Context(), actor.Head, &st); err != nil {
-				return err
-			}
-			if summary, msgs, err := market.CheckStateInvariants(&st, tree.Store, actor.Balance, priorEpoch); err != nil {
-				return err
+				acc.Addf("error loading actor state: %v", err)
+			} else if summary, msgs, err := market.CheckStateInvariants(&st, tree.Store, actor.Balance, priorEpoch); err != nil {
+				acc.Addf("error validating actor state: %v", err)
 			} else {
 				acc.WithPrefix("market: ").AddAll(msgs)
 				marketSummary = summary
 			}
-
 		case builtin.PaymentChannelActorCodeID:
 			var st paych.State
 			if err := tree.Store.Get(tree.Store.Context(), actor.Head, &st); err != nil {
-				return err
-			}
-			if summary, msgs, err := paych.CheckStateInvariants(&st, tree.Store, actor.Balance); err != nil {
-				return err
+				acc.Addf("error loading actor state: %v", err)
+			} else if summary, msgs, err := paych.CheckStateInvariants(&st, tree.Store, actor.Balance); err != nil {
+				acc.Addf("error validating actor state: %v", err)
 			} else {
 				acc.WithPrefix("paych: ").AddAll(msgs)
 				paychSummaries = append(paychSummaries, summary)
 			}
-
 		case builtin.MultisigActorCodeID:
 			var st multisig.State
 			if err := tree.Store.Get(tree.Store.Context(), actor.Head, &st); err != nil {
-				return err
-			}
-			if summary, msgs, err := multisig.CheckStateInvariants(&st, tree.Store); err != nil {
-				return err
+				acc.Addf("error loading actor state: %v", err)
+			} else if summary, msgs, err := multisig.CheckStateInvariants(&st, tree.Store); err != nil {
+				acc.Addf("error validating actor state: %v", err)
 			} else {
 				acc.WithPrefix("multisig: ").AddAll(msgs)
 				multisigSummaries = append(multisigSummaries, summary)
 			}
-
 		case builtin.RewardActorCodeID:
 
 		case builtin.VerifiedRegistryActorCodeID:
 			var st verifreg.State
 			if err := tree.Store.Get(tree.Store.Context(), actor.Head, &st); err != nil {
-				return err
-			}
-			if summary, msgs, err := verifreg.CheckStateInvariants(&st, tree.Store); err != nil {
-				return err
+				acc.Addf("error loading actor state: %v", err)
+			} else if summary, msgs, err := verifreg.CheckStateInvariants(&st, tree.Store); err != nil {
+				acc.Addf("error validating actor state: %v", err)
 			} else {
 				acc.WithPrefix("verifreg: ").AddAll(msgs)
 				verifregSummary = summary
@@ -153,7 +144,7 @@ func CheckStateInvariants(tree *Tree, expectedBalanceTotal abi.TokenAmount, prio
 		}
 		return nil
 	}); err != nil {
-		return nil, err
+		return nil, xerrors.Errorf("failed to traverse state tree: %w", err)
 	}
 
 	//
