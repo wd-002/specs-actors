@@ -744,7 +744,7 @@ func (a Actor) PreCommitSector(rt Runtime, params *PreCommitSectorParams) *abi.E
 			rt.Abortf(exitcode.ErrIllegalArgument, "deals too large to fit in sector %d > %d", dealWeight.DealSpace, info.SectorSize)
 		}
 
-		err = st.AllocateSectorNumber(store, params.SectorNumber)
+		err = st.AllocateSectorNumbers(store, bitfield.NewFromSet([]uint64{uint64(params.SectorNumber)}), DenyCollisions)
 		builtin.RequireNoErr(rt, err, exitcode.ErrIllegalState, "failed to allocate sector id %d", params.SectorNumber)
 
 		// This sector check is redundant given the allocated sectors bitfield, but remains for safety.
@@ -768,7 +768,7 @@ func (a Actor) PreCommitSector(rt Runtime, params *PreCommitSectorParams) *abi.E
 		err = st.AddPreCommitDeposit(depositReq)
 		builtin.RequireNoErr(rt, err, exitcode.ErrIllegalState, "failed to add pre-commit deposit %v", depositReq)
 
-		if err := st.PutPrecommittedSector(store, &SectorPreCommitOnChainInfo{
+		if err := st.PutPrecommittedSectors(store, &SectorPreCommitOnChainInfo{
 			Info:               SectorPreCommitInfo(*params),
 			PreCommitDeposit:   depositReq,
 			PreCommitEpoch:     rt.CurrEpoch(),
@@ -787,7 +787,7 @@ func (a Actor) PreCommitSector(rt Runtime, params *PreCommitSectorParams) *abi.E
 		// ConfirmSectorProofsValid would fail to find it.
 		expiryBound := rt.CurrEpoch() + msd + 1
 
-		err = st.AddPreCommitExpiry(store, expiryBound, params.SectorNumber)
+		err = st.AddPreCommitExpirations(store, map[abi.ChainEpoch][]uint64{expiryBound: {uint64(params.SectorNumber)}})
 		builtin.RequireNoErr(rt, err, exitcode.ErrIllegalState, "failed to add pre-commit expiry to queue")
 
 		// activate miner cron
@@ -1767,7 +1767,7 @@ func (a Actor) CompactSectorNumbers(rt Runtime, params *CompactSectorNumbersPara
 		info := getMinerInfo(rt, &st)
 		rt.ValidateImmediateCallerIs(append(info.ControlAddresses, info.Owner, info.Worker)...)
 
-		err := st.MaskSectorNumbers(store, params.MaskSectorNumbers)
+		err := st.AllocateSectorNumbers(store, params.MaskSectorNumbers, AllowCollisions)
 
 		builtin.RequireNoErr(rt, err, exitcode.ErrIllegalState, "failed to mask sector numbers")
 	})
