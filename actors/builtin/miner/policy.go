@@ -112,12 +112,12 @@ var FaultMaxAge = WPoStProvingPeriod * 14
 const WorkerKeyChangeDelay = ChainFinality
 
 // Minimum number of epochs past the current epoch a sector may be set to expire.
-const MinSectorExpiration = 180 * builtin.EpochsInDay
+const MinSectorExpiration = 90 * builtin.EpochsInDay
 
 // Maximum number of epochs past the current epoch a sector may be set to expire.
 // The actual maximum extension will be the minimum of CurrEpoch + MaximumSectorExpirationExtension
 // and sector.ActivationEpoch+sealProof.SectorMaximumLifetime()
-const MaxSectorExpirationExtension = 540 * builtin.EpochsInDay
+const MaxSectorExpirationExtension = 270 * builtin.EpochsInDay
 
 // Ratio of sector size to maximum deals per sector.
 // The maximum number of deals is the sector size divided by this number (2^27)
@@ -187,14 +187,14 @@ type VestSpec struct {
 
 var RewardVestingSpecV0 = VestSpec{
 	InitialDelay: abi.ChainEpoch(20 * builtin.EpochsInDay),  // PARAM_FINISH
-	VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay), // PARAM_FINISH
+	VestPeriod:   abi.ChainEpoch(90 * builtin.EpochsInDay), // PARAM_FINISH
 	StepDuration: abi.ChainEpoch(1 * builtin.EpochsInDay),   // PARAM_FINISH
 	Quantization: 12 * builtin.EpochsInHour,                 // PARAM_FINISH
 }
 
 var RewardVestingSpecV1 = VestSpec{
 	InitialDelay: abi.ChainEpoch(0),                         // PARAM_FINISH
-	VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay), // PARAM_FINISH
+	VestPeriod:   abi.ChainEpoch(90 * builtin.EpochsInDay), // PARAM_FINISH
 	StepDuration: abi.ChainEpoch(1 * builtin.EpochsInDay),   // PARAM_FINISH
 	Quantization: 12 * builtin.EpochsInHour,                 // PARAM_FINISH
 }

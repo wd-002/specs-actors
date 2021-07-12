@@ -22,7 +22,7 @@ var ProvCollateralPercentSupplyDenom = big.NewInt(100)
 
 // Bounds (inclusive) on deal duration
 func dealDurationBounds(size abi.PaddedPieceSize) (min abi.ChainEpoch, max abi.ChainEpoch) {
-	return abi.ChainEpoch(180 * builtin.EpochsInDay), abi.ChainEpoch(540 * builtin.EpochsInDay) // PARAM_FINISH
+	return abi.ChainEpoch(90 * builtin.EpochsInDay), abi.ChainEpoch(270 * builtin.EpochsInDay) // PARAM_FINISH
 }
 
 func dealPricePerEpochBounds(size abi.PaddedPieceSize, duration abi.ChainEpoch) (min abi.TokenAmount, max abi.TokenAmount) {
