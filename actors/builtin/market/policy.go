@@ -18,10 +18,10 @@ var ProviderCollateralSupplyTarget = builtin.BigFrac{
 }
 
 // Minimum deal duration.
-var DealMinDuration = abi.ChainEpoch(180 * builtin.EpochsInDay) // PARAM_SPEC
+var DealMinDuration = abi.ChainEpoch(90 * builtin.EpochsInDay) // PARAM_SPEC
 
 // Maximum deal duration
-var DealMaxDuration = abi.ChainEpoch(540 * builtin.EpochsInDay) // PARAM_SPEC
+var DealMaxDuration = abi.ChainEpoch(270 * builtin.EpochsInDay) // PARAM_SPEC
 
 // DealMaxLabelSize is the maximum size of a deal label.
 const DealMaxLabelSize = 256
