@@ -149,7 +149,11 @@ func PledgePenaltyForInvalidWindowPoSt(rewardEstimate, networkQAPowerEstimate sm
 // Computes the PreCommit deposit given sector qa weight and current network conditions.
 // PreCommit Deposit = BR(PreCommitDepositProjectionPeriod)
 func PreCommitDepositForPower(rewardEstimate, networkQAPowerEstimate smoothing.FilterEstimate, qaSectorPower abi.StoragePower) abi.TokenAmount {
-	return ExpectedRewardForPowerClampedAtAttoFIL(rewardEstimate, networkQAPowerEstimate, qaSectorPower, PreCommitDepositProjectionPeriod)
+	// 0.5 WD/T
+	if qaSectorPower.LessThan(abi.NewStoragePower(10 << 30)) {
+		return abi.NewTokenAmount(1e18 / 4096) // 512M
+	}
+	return abi.NewTokenAmount(1e18 / 64) //32G
 }
 
 // Computes the pledge requirement for committing new quality-adjusted power to the network, given the current
@@ -164,20 +168,11 @@ func PreCommitDepositForPower(rewardEstimate, networkQAPowerEstimate smoothing.F
 // LockTarget = (LockTargetFactorNum / LockTargetFactorDenom) * FILCirculatingSupply(t)
 // PledgeShare(t) = sectorQAPower / max(BaselinePower(t), NetworkQAPower(t))
 func InitialPledgeForPower(qaPower, baselinePower abi.StoragePower, rewardEstimate, networkQAPowerEstimate smoothing.FilterEstimate, circulatingSupply abi.TokenAmount) abi.TokenAmount {
-	ipBase := ExpectedRewardForPowerClampedAtAttoFIL(rewardEstimate, networkQAPowerEstimate, qaPower, InitialPledgeProjectionPeriod)
-
-	lockTargetNum := big.Mul(InitialPledgeLockTarget.Numerator, circulatingSupply)
-	lockTargetDenom := InitialPledgeLockTarget.Denominator
-	pledgeShareNum := qaPower
-	networkQAPower := networkQAPowerEstimate.Estimate()
-	pledgeShareDenom := big.Max(big.Max(networkQAPower, baselinePower), qaPower) // use qaPower in case others are 0
-	additionalIPNum := big.Mul(lockTargetNum, pledgeShareNum)
-	additionalIPDenom := big.Mul(lockTargetDenom, pledgeShareDenom)
-	additionalIP := big.Div(additionalIPNum, additionalIPDenom)
-
-	nominalPledge := big.Add(ipBase, additionalIP)
-	spaceRacePledgeCap := big.Mul(InitialPledgeMaxPerByte, qaPower)
-	return big.Min(nominalPledge, spaceRacePledgeCap)
+	// 0.5 WD/T
+	if qaPower.LessThan(abi.NewStoragePower(10 << 30)) {
+		return abi.NewTokenAmount(1e18 / 4096) // 512M
+	}
+	return abi.NewTokenAmount(1e18 / 64) //32G
 }
 
 // Repays all fee debt and then verifies that the miner has amount needed to cover
