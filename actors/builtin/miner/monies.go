@@ -168,11 +168,11 @@ func PreCommitDepositForPower(rewardEstimate, networkQAPowerEstimate smoothing.F
 // LockTarget = (LockTargetFactorNum / LockTargetFactorDenom) * FILCirculatingSupply(t)
 // PledgeShare(t) = sectorQAPower / max(BaselinePower(t), NetworkQAPower(t))
 func InitialPledgeForPower(qaPower, baselinePower abi.StoragePower, rewardEstimate, networkQAPowerEstimate smoothing.FilterEstimate, circulatingSupply abi.TokenAmount) abi.TokenAmount {
-	// 0.5 WD/T
+	// 1 WD/T
 	if qaPower.LessThan(abi.NewStoragePower(10 << 30)) {
-		return abi.NewTokenAmount(1e18 / 4096) // 512M
+		return abi.NewTokenAmount(1e18 / 2048) // 512M
 	}
-	return abi.NewTokenAmount(1e18 / 64) //32G
+	return abi.NewTokenAmount(1e18 / 32) //32G
 }
 
 // Repays all fee debt and then verifies that the miner has amount needed to cover
